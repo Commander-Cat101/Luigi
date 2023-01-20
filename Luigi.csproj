@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <RootNamespace>Luigi</RootNamespace>
+        <Configurations>Debug;Release</Configurations>
+        <Nullable>enable</Nullable>
+        <AssemblyName>Luigi</AssemblyName>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <Optimize>False</Optimize>
+        <DebugType>embedded</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <Optimize>True</Optimize>
+        <DebugType>none</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\FlameBlast-Icon.png" />
+      <None Remove="Assets\GolderLuigiDisplay.png" />
+      <None Remove="Assets\Icon.png" />
+      <None Remove="Assets\LighterFireballs-Icon.png" />
+      <None Remove="Assets\luigi.bundle" />
+      <None Remove="Assets\LuigiDisplay.png" />
+      <None Remove="Assets\LuigiIcon.png" />
+      <None Remove="Assets\Shockwaves-Icon.png" />
+      <None Remove="Assets\Superuigi-Icon.png" />
+      <None Remove="Assets\Superuigi.png" />
+      <None Remove="Assets\Texture.png" />
+      <None Remove="png-clipart-mario-luigi-superstar-saga-minecraft-mario-bros-luigi-bead-cartoon.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Il2CppInterop.Common">
+        <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Drawing.Common">
+        <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\net6\System.Drawing.Common.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <Import Project="..\btd6.targets" />
+</Project>
